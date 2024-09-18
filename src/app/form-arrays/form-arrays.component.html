@@ -1,0 +1,13 @@
+<form [formGroup]="myForm">
+    <div formArrayName="myArray">
+        <div *ngFor="let control of myForm.get('myArray')['controls']; let i = index">
+
+            <!-- Here we are dynamicallly adding controls to Form Array
+            one of the benifits of using Form Array is that we can dynamically add form controls to it. -->
+            <input [formControl]="control" placeholder="Enter some value" />
+    
+        </div>
+    </div>
+    <button type="button" (click)="addControl()">Add Control</button>
+    <button type="button" (click)="removeControl(1)">Remove Control</button>
+</form>

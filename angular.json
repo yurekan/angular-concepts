@@ -27,9 +27,11 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "C:/Users/Administrator/Downloads/angular-concepts/node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "C:/Users/Administrator/Downloads/angular-concepts/node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
