@@ -7,6 +7,8 @@ import { FormArraysComponent } from './app/forms/form-arrays/form-arrays.compone
 import { FormControlsComponent } from './app/forms/form-controls/form-controls.component';
 import { RunRoutingComponent } from './app/routing/run-routing/run-routing.component';
 import { HttpClientComponent } from './app/http-client/http-client.component';
+import { LifecycleHooksComponent } from './app/lifecycle-hooks/lifecycle-hooks.component';
+import { RunLfhComponentComponent } from './app/run-lfh-component/run-lfh-component.component';
 
-bootstrapApplication(HttpClientComponent, appConfig)
+bootstrapApplication(RunLfhComponentComponent, appConfig)
   .catch((err) => console.error(err));
