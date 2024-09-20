@@ -32,3 +32,14 @@
         </div>
     </div>
 </div>
+
+<div *ngIf="isVisible">This element is shown conditionally</div>
+<div [ngStyle]="{'background-color': color}">Style Element</div>
+
+<a appHighlight>This text is highlighted</a>
+<button appReborder>Button with red border</button>
+
+<h1>{{title}}</h1>
+<input type="text" [(ngModel)]="name"  />
+<p>Hello, {{name}}</p>
+<button [disabled]="!name">Greet</button>

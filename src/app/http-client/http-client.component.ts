@@ -5,10 +5,14 @@ import { PostService } from '../services/post.service';
 import { Post } from '../post';
 import { from } from 'rxjs';
 
+import { HighlightDirective } from '../highlight.directive';
+import { ReborderDirective } from '../reborder.directive';
+import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-http-client',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HighlightDirective, ReborderDirective, FormsModule],
   templateUrl: './http-client.component.html',
   styleUrl: './http-client.component.css'
 })
@@ -38,4 +42,10 @@ export class HttpClientComponent implements OnInit{
       complete() {console.log("Completed")}
     });
   }
+
+  isVisible=true;
+  color='red'
+
+  title='Data Binding Using Host Listener';
+  name = '';
 }
