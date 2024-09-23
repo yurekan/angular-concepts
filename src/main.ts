@@ -9,6 +9,7 @@ import { RunRoutingComponent } from './app/routing/run-routing/run-routing.compo
 import { HttpClientComponent } from './app/http-client/http-client.component';
 import { LifecycleHooksComponent } from './app/lifecycle-hooks/lifecycle-hooks.component';
 import { RunLfhComponentComponent } from './app/run-lfh-component/run-lfh-component.component';
+import { TutorialsListComponent } from './app/frontend-for-tutorial/tutorials-list/tutorials-list.component';
 
-bootstrapApplication(RunLfhComponentComponent, appConfig)
+bootstrapApplication(TutorialsListComponent, appConfig)
   .catch((err) => console.error(err));
