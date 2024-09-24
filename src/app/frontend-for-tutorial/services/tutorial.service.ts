@@ -28,7 +28,7 @@ export class TutotorialService {
     return this.http.put(`${baseURL}/${id}`,data);
   }
   delete(id:any): Observable<any> {
-    return this.http.delete(baseURL);
+    return this.http.delete(`${baseURL}/${id}`); // through string templating (TypeScript)
   }
 
   deleteAll(): Observable<any> {

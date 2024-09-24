@@ -15,6 +15,7 @@ import { MappingComponent } from './pages/general/contact/mapping/mapping.compon
 import { WebsiteComponent } from './pages/general/contact/website/website.component';
 import { TutorialsListComponent } from './frontend-for-tutorial/tutorials-list/tutorials-list.component';
 import { TutorialsDetailsComponent } from './frontend-for-tutorial/tutorials-details/tutorials-details.component';
+import { AddTutorialComponent } from './frontend-for-tutorial/add-tutorial/add-tutorial.component';
 
 export const routes: Routes = [
     // {path: '', component: HomeComponent},
@@ -41,4 +42,5 @@ export const routes: Routes = [
     {path: '', redirectTo: 'tutorials', pathMatch: 'full'},
     {path: 'tutorials', component: TutorialsListComponent},
     {path: 'tutorials/:id', component: TutorialsDetailsComponent},
+    {path: 'add', component: AddTutorialComponent}
 ];

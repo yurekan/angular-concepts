@@ -1,9 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Tutorial } from '../model/tutorial.model';
+import { Comment } from '../model/comment.model';
 import { TutotorialService } from '../services/tutorial.service';
 import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Tag } from '../model/tag.model';
+import { CommentService } from '../services/comment.service';
+import { TagService } from '../services/tag.service';
 
 @Component({
   selector: 'app-tutorials-details',
@@ -16,15 +19,20 @@ export class TutorialsDetailsComponent implements OnInit{
 
   @Input() viewMode = false;
   @Input() currentTutorial: Tutorial = {
-    id: '',
+    id: 0,
     title: '',
     description: '',
     published: false
   };
 
+  @Input() comments: Comment[] = [];
+  @Input() tags: Tag[] = [];
+
   message = '';
 
-  constructor(private tutorialService: TutotorialService, 
+  constructor(private tutorialService: TutotorialService,
+    private commentService: CommentService,
+    private tagService: TagService,
     private route: ActivatedRoute,
     private router: Router) {}
 
@@ -39,7 +47,29 @@ export class TutorialsDetailsComponent implements OnInit{
     this.tutorialService.get(id).subscribe({
       next: (data) => {
         this.currentTutorial = data;
+        this.getComment(this.currentTutorial);
+        this.getTag(this.currentTutorial);
         console.log(data);
+      },
+      error: (e) => console.log(e)
+    });
+  }
+
+  getComment(currentTutorial: Tutorial): void{
+    this.commentService.getAllCommentsForTutorial(currentTutorial.id).subscribe({
+      next: (value) => {
+        console.log("Comments in tutorials-list", value);
+        this.comments = value;
+      },
+      error: (e) => console.log(e)
+    });
+  }
+
+  getTag(currentTutorial: Tutorial): void{
+    this.tagService.getAllTags(currentTutorial.id).subscribe({
+      next: (value) => {
+        console.log("Tags in tutorials-list", value);
+        this.tags = value;
       },
       error: (e) => console.log(e)
     });
@@ -74,6 +104,11 @@ export class TutorialsDetailsComponent implements OnInit{
       },
       error: (e) => console.log(e)
     });
+
+    setTimeout(() => {
+      this.router.navigate([`/tutorials`]);
+    }, 1000); // after 1 second, after we click on update tutorial button, page will automatically
+    // redirect to tutorials page for us to verify our changes
   }
 
   deleteTutorial(): void{
@@ -85,6 +120,11 @@ export class TutorialsDetailsComponent implements OnInit{
       },
       error: (e) => console.log(e)
     });
+
+    setTimeout(() => {
+      this.router.navigate([`/tutorials`]);
+    }, 1000); //after 1 second we click on delete tutorial button, page will automatically
+    // redirect to tutorials page for us to verify our changes.
   }
 
 }

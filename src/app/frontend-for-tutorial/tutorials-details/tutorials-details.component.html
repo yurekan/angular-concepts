@@ -13,6 +13,23 @@
             <label><strong>Status:</strong></label>{{ currentTutorial.published ? "Published" : "Pending"}}
         </div>
 
+        <div>
+            <label><strong>Commets:</strong></label>
+            @for (comment of comments; track comment.id; let i = $index){
+                <li class="list-group-item">
+                {{comment.comment}}
+                </li>
+            }
+        </div>
+        <div>
+            <label><strong>Tags:</strong></label>
+            @for (tag of tags; track tag.id; let i = $index){
+                <li class="list-group-item">
+                {{tag.name}}
+                </li>
+            }
+        </div>
+
         <a class="badge bg-warning" routerLink="/tutorials/{{ currentTutorial.id }}">
             Edit
         </a>
@@ -36,6 +53,22 @@
                     <label><strong>Status: </strong></label>
                     {{ currentTutorial.published ? "Published" : "Pending"}}
                 </div>
+                <div class="form-group">
+                    <label><strong>Comments</strong></label>
+                    @for (comment of comments; track comment.id; let i = $index){
+                        <li class="list-group-item">
+                        {{comment.comment}}
+                        </li>
+                    }
+                </div>
+                <div class="form-group">
+                    <label><strong>Tags</strong></label>
+                    @for (tag of tags; track tag.id; let i = $index){
+                        <li class="list-group-item">
+                        {{tag.name}}
+                        </li>
+                    }
+                </div>
             </form>
 
             @if (currentTutorial.published) {
@@ -57,5 +90,7 @@
             </button>
             <p>{{ message }}</p>
         </div>
+
+
     } @else { <p>Cannot access this tutorial...</p> }
 }
