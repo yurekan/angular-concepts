@@ -3,11 +3,12 @@ import { Tutorial } from '../model/tutorial.model';
 import { TutotorialService } from '../services/tutorial.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, NgClass } from '@angular/common';
+import { TutorialsDetailsComponent } from '../tutorials-details/tutorials-details.component';
 
 @Component({
   selector: 'app-tutorials-list',
   standalone: true,
-  imports: [CommonModule , NgClass, FormsModule],
+  imports: [CommonModule , NgClass, FormsModule, TutorialsDetailsComponent],
   templateUrl: './tutorials-list.component.html',
   styleUrl: './tutorials-list.component.css'
 })

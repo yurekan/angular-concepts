@@ -10,6 +10,7 @@ import { HttpClientComponent } from './app/http-client/http-client.component';
 import { LifecycleHooksComponent } from './app/lifecycle-hooks/lifecycle-hooks.component';
 import { RunLfhComponentComponent } from './app/run-lfh-component/run-lfh-component.component';
 import { TutorialsListComponent } from './app/frontend-for-tutorial/tutorials-list/tutorials-list.component';
+import { RunProjectComponent } from './app/frontend-for-tutorial/run-project/run-project.component';
 
-bootstrapApplication(TutorialsListComponent, appConfig)
+bootstrapApplication(RunProjectComponent, appConfig)
   .catch((err) => console.error(err));

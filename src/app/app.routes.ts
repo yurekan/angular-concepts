@@ -13,27 +13,32 @@ import { ContactComponent } from './pages/general/contact/contact.component';
 import { MailingComponent } from './pages/general/contact/mailing/mailing.component';
 import { MappingComponent } from './pages/general/contact/mapping/mapping.component';
 import { WebsiteComponent } from './pages/general/contact/website/website.component';
+import { TutorialsListComponent } from './frontend-for-tutorial/tutorials-list/tutorials-list.component';
+import { TutorialsDetailsComponent } from './frontend-for-tutorial/tutorials-details/tutorials-details.component';
 
 export const routes: Routes = [
-    {path: '', component: HomeComponent},
-    {path: 'login', component: LoginComponent},
-    {path: 'signup', component: SignupComponent},
-    {
-        path: 'about', component: AboutComponent,
-        children: [
-            {path: '', component: ExperienceComponent},
-            {path: 'experience', component: ExperienceComponent},
-            {path: 'skill', component: SkillComponent},
-        ],
-    },
-    {
-        path: 'contact', component: ContactComponent,
-        children: [
-            {path: '', component: MailingComponent},
-            {path: 'mailing', component: MailingComponent},
-            {path: 'mapping', component: MappingComponent},
-            {path: 'website', component: WebsiteComponent},
-        ],
-    },
-    {path: '**', component: NotFoundComponent}
+    // {path: '', component: HomeComponent},
+    // {path: 'login', component: LoginComponent},
+    // {path: 'signup', component: SignupComponent},
+    // {
+    //     path: 'about', component: AboutComponent,
+    //     children: [
+    //         {path: '', component: ExperienceComponent},
+    //         {path: 'experience', component: ExperienceComponent},
+    //         {path: 'skill', component: SkillComponent},
+    //     ],
+    // },
+    // {
+    //     path: 'contact', component: ContactComponent,
+    //     children: [
+    //         {path: '', component: MailingComponent},
+    //         {path: 'mailing', component: MailingComponent},
+    //         {path: 'mapping', component: MappingComponent},
+    //         {path: 'website', component: WebsiteComponent},
+    //     ],
+    // },
+    // {path: '**', component: NotFoundComponent}
+    {path: '', redirectTo: 'tutorials', pathMatch: 'full'},
+    {path: 'tutorials', component: TutorialsListComponent},
+    {path: 'tutorials/:id', component: TutorialsDetailsComponent},
 ];

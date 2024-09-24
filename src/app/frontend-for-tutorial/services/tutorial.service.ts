@@ -17,15 +17,15 @@ export class TutotorialService {
   }
 
   get(id: any): Observable<Tutorial> {
-    return this.http.get<Tutorial>('$baseURL/$[id]');
+    return this.http.get<Tutorial>(`${baseURL}/${id}`);
   }
 
   create(data:any): Observable<any> {
     return this.http.post(baseURL,data);
   }
 
-  update(d: any, data: any): Observable<any> {
-    return this.http.put('$baseURL/$[id]',data);
+  update(id: any, data: any): Observable<any> {
+    return this.http.put(`${baseURL}/${id}`,data);
   }
   delete(id:any): Observable<any> {
     return this.http.delete(baseURL);

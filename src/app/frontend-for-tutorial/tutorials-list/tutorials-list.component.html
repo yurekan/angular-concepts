@@ -11,21 +11,26 @@
             </div>
         </div>
     </div>
+
+    <div class="col-md-6">
+        <h4>Tutorials List</h4>
+        <ul class="list-group">
+            @for (tutorial of tutorials; track tutorial.id; let i = $index){
+                <li class="list-group-item"
+                [class.active]="i == currentIndex"
+                (click)="selectActiveTutorial(tutorial, i)">
+                {{tutorial.title}}
+                </li>
+            }
+        </ul>
+    
+        <button class="mb-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
+            Remove All Tutorials
+        </button>
+    </div>
+
 </div>
 
 <div class="col-md-6">
-    <h4>Tutorials List</h4>
-    <ul class="list-group">
-        @for (tutorial of tutorials; track tutorial.id; let i = $index){
-            <li class="list-group-item"
-            [class.active]="i == currentIndex"
-            (click)="selectActiveTutorial(tutorial, i)">
-            {{tutorial.title}}
-            </li>
-        }
-    </ul>
-
-    <button class="mb-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
-        Remove All Tutorials
-    </button>
+    <app-tutorials-details [viewMode]="true" [currentTutorial]="currentTutorial"></app-tutorials-details>
 </div>
