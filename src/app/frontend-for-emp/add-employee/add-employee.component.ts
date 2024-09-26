@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { EmployeeService } from '../service/employee.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Employee } from '../model/employee';
 import { CommonModule } from '@angular/common';
@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-add-employee',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './add-employee.component.html',
   styleUrl: './add-employee.component.css'
 })

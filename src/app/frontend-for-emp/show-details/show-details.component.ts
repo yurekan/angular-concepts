@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { EmployeeListComponent } from '../employee-list/employee-list.component';
 import { EmployeeService } from '../service/employee.service';
 import { Employee } from '../model/employee';
@@ -7,7 +7,7 @@ import { Employee } from '../model/employee';
 @Component({
   selector: 'app-show-details',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './show-details.component.html',
   styleUrl: './show-details.component.css'
 })

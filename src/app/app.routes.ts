@@ -20,6 +20,7 @@ import { EmployeeListComponent } from './frontend-for-emp/employee-list/employee
 import { ShowDetailsComponent } from './frontend-for-emp/show-details/show-details.component';
 import { AddEmployeeComponent } from './frontend-for-emp/add-employee/add-employee.component';
 import { RunEmpProjectComponent } from './frontend-for-emp/run-emp-project/run-emp-project.component';
+import { UpdateEmployeeComponent } from './frontend-for-emp/update-employee/update-employee.component';
 
 export const routes: Routes = [
     // {path: '', component: HomeComponent},
@@ -49,7 +50,8 @@ export const routes: Routes = [
     {path: 'run-emp-project', component: RunEmpProjectComponent},
     {path: 'add-employees', component: AddEmployeeComponent},
     {path: 'show-all-employees', component: EmployeeListComponent},
-    {path: 'details-of-employes/:id', component: ShowDetailsComponent},
+    {path: 'details-of-employee/:id', component: ShowDetailsComponent},
+    {path: 'updating-by-id/:id', component: UpdateEmployeeComponent},
     {path: '**', component: NotFoundComponent}
     // {path: 'tutorials', component: TutorialsListComponent},
     // {path: 'tutorials/:id', component: TutorialsDetailsComponent},
