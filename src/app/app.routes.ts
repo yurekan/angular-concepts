@@ -16,6 +16,10 @@ import { WebsiteComponent } from './pages/general/contact/website/website.compon
 import { TutorialsListComponent } from './frontend-for-tutorial/tutorials-list/tutorials-list.component';
 import { TutorialsDetailsComponent } from './frontend-for-tutorial/tutorials-details/tutorials-details.component';
 import { AddTutorialComponent } from './frontend-for-tutorial/add-tutorial/add-tutorial.component';
+import { EmployeeListComponent } from './frontend-for-emp/employee-list/employee-list.component';
+import { ShowDetailsComponent } from './frontend-for-emp/show-details/show-details.component';
+import { AddEmployeeComponent } from './frontend-for-emp/add-employee/add-employee.component';
+import { RunEmpProjectComponent } from './frontend-for-emp/run-emp-project/run-emp-project.component';
 
 export const routes: Routes = [
     // {path: '', component: HomeComponent},
@@ -38,9 +42,16 @@ export const routes: Routes = [
     //         {path: 'website', component: WebsiteComponent},
     //     ],
     // },
-    // {path: '**', component: NotFoundComponent}
-    {path: '', redirectTo: 'tutorials', pathMatch: 'full'},
-    {path: 'tutorials', component: TutorialsListComponent},
-    {path: 'tutorials/:id', component: TutorialsDetailsComponent},
-    {path: 'add', component: AddTutorialComponent}
+    // {path: '', redirectTo: 'show-all-employees', pathMatch: 'full'},
+    // {path: 'home', component: HomeComponent2},
+    // {path: 'login', component: AdminLoginComponent},
+    // {path: 'updating-by-id/:id', component: UpdateEmployeeComponent},
+    {path: 'run-emp-project', component: RunEmpProjectComponent},
+    {path: 'add-employees', component: AddEmployeeComponent},
+    {path: 'show-all-employees', component: EmployeeListComponent},
+    {path: 'details-of-employes/:id', component: ShowDetailsComponent},
+    {path: '**', component: NotFoundComponent}
+    // {path: 'tutorials', component: TutorialsListComponent},
+    // {path: 'tutorials/:id', component: TutorialsDetailsComponent},
+    // {path: 'add', component: AddTutorialComponent}
 ];
