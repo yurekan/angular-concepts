@@ -1,3 +1,5 @@
+/// <reference types="@angular/localize" />
+
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
@@ -14,6 +16,8 @@ import { RunProjectComponent } from './app/frontend-for-tutorial/run-project/run
 import { EmployeeListComponent } from './app/frontend-for-emp/employee-list/employee-list.component';
 import { AddEmployeeComponent } from './app/frontend-for-emp/add-employee/add-employee.component';
 import { RunEmpProjectComponent } from './app/frontend-for-emp/run-emp-project/run-emp-project.component';
+import { AdminComponent } from './app/frontend-for-emp/admin/admin.component';
+import { HomeComponent } from './app/frontend-for-emp/home/home.component';
 
 bootstrapApplication(RunEmpProjectComponent, appConfig)
   .catch((err) => console.error(err));

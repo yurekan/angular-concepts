@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { HomeComponent } from './pages/general/home/home.component';
 import { LoginComponent } from './pages/general/login/login.component';
 import { SignupComponent } from './pages/general/signup/signup.component';
 import { NotFoundComponent } from './pages/general/not-found/not-found.component';
@@ -21,6 +20,10 @@ import { ShowDetailsComponent } from './frontend-for-emp/show-details/show-detai
 import { AddEmployeeComponent } from './frontend-for-emp/add-employee/add-employee.component';
 import { RunEmpProjectComponent } from './frontend-for-emp/run-emp-project/run-emp-project.component';
 import { UpdateEmployeeComponent } from './frontend-for-emp/update-employee/update-employee.component';
+import { HomeComponent } from './frontend-for-emp/home/home.component';
+import { AdminComponent } from './frontend-for-emp/admin/admin.component';
+import { RegisterComponent } from './frontend-for-emp/register/register.component';
+import { ForgotPasswordComponent } from './frontend-for-emp/forgot-password/forgot-password.component';
 
 export const routes: Routes = [
     // {path: '', component: HomeComponent},
@@ -43,10 +46,11 @@ export const routes: Routes = [
     //         {path: 'website', component: WebsiteComponent},
     //     ],
     // },
-    // {path: '', redirectTo: 'show-all-employees', pathMatch: 'full'},
-    // {path: 'home', component: HomeComponent2},
-    // {path: 'login', component: AdminLoginComponent},
-    // {path: 'updating-by-id/:id', component: UpdateEmployeeComponent},
+    {path: '', redirectTo: 'login', pathMatch: 'full'},
+    {path: 'home', component: HomeComponent},
+    {path: 'login', component: AdminComponent},
+    {path: 'register', component: RegisterComponent},
+    {path: 'forgot-password', component: ForgotPasswordComponent},
     {path: 'run-emp-project', component: RunEmpProjectComponent},
     {path: 'add-employees', component: AddEmployeeComponent},
     {path: 'show-all-employees', component: EmployeeListComponent},

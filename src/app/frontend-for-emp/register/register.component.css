@@ -1,0 +1,11 @@
+.form-container {
+    max-width: 400px; /* Limit the width of the form */
+    margin: auto; /* Center the form */
+}
+.form-control {
+    width: 100%; /* Ensure full width */
+    max-width: 400px; /* Limit the width of input boxes */
+}
+.spacing {
+    margin-bottom: 15px; /* Space between components */
+}

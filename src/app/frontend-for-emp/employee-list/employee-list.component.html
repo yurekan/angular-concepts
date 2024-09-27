@@ -1,11 +1,11 @@
 <div class="container">
-    <div>
-        <form (ngSubmit)="goToEmployee()">
-            <div class="form-group col-md-6 inline">
-                <input [(ngModel)] = "enteredId" type="text"
+    <div class="row justify-content-center">
+        <form (ngSubmit)="goToEmployee()" class="d-flex">
+            <div class="form-group">
+                <input [(ngModel)]="enteredId" type="text"
                 class="form-control" id="id" name="id" placeholder="Search By Id" />
-                <button class="btn btn-secondary" type="submit" typeof="submit">Search</button>
             </div>
+            <button class="btn btn-outline-success ms-2" type="submit">Search</button>
         </form>
     </div>
     <br>
